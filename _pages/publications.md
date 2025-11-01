@@ -16,12 +16,11 @@ nav_order: 2
 <div class="publications">
 
 {%- comment -%}
-The bibliography tag requires jekyll-scholar plugin which is not supported by GitHub Pages.
-Use GitHub Actions for building if you need this feature.
+Bibliography feature disabled - requires jekyll-scholar plugin not supported by GitHub Pages.
+To enable: Use GitHub Actions for building instead of standard GitHub Pages.
 See: https://jekyllrb.com/docs/continuous-integration/github-actions/
-{%- endcomment -%}
-{%- if jekyll.environment == "development" -%}
+Original code:
 {% bibliography %}
-{%- endif -%}
+{%- endcomment -%}
 
 </div>

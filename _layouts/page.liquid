@@ -18,19 +18,18 @@ layout: default
     {{ content }}
   </article>
 
-  {% if page.related_publications %}
-    <h2>References</h2>
-    <div class="publications">
-      {%- comment -%}
-      The bibliography tag requires jekyll-scholar plugin which is not supported by GitHub Pages.
-      Use GitHub Actions for building if you need this feature.
-      See: https://jekyllrb.com/docs/continuous-integration/github-actions/
-      {%- endcomment -%}
-      {%- if jekyll.environment == "development" -%}
+  {%- comment -%}
+    Bibliography feature disabled - requires jekyll-scholar plugin not supported by GitHub Pages.
+    To enable: Use GitHub Actions for building instead of standard GitHub Pages.
+    See: https://jekyllrb.com/docs/continuous-integration/github-actions/
+    Original code:
+    {% if page.related_publications %}
+      <h2>References</h2>
+      <div class="publications">
         {% bibliography --cited_in_order %}
-      {%- endif -%}
-    </div>
-  {% endif %}
+      </div>
+    {% endif %}
+  {%- endcomment -%}
 
   {% if site.giscus and page.giscus_comments %}
     {% include giscus.liquid %}
