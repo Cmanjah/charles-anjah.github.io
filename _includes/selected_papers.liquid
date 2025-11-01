@@ -1,3 +1,10 @@
 <div class="publications">
-  {% bibliography --group_by none --query @*[selected=true]* %}
+  {%- comment -%}
+  The bibliography tag requires jekyll-scholar plugin which is not supported by GitHub Pages.
+  Use GitHub Actions for building if you need this feature.
+  See: https://jekyllrb.com/docs/continuous-integration/github-actions/
+  {%- endcomment -%}
+  {%- if jekyll.environment == "development" -%}
+    {% bibliography --group_by none --query @*[selected=true]* %}
+  {%- endif -%}
 </div>
